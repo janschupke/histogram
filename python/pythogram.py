@@ -39,7 +39,7 @@ class IO:
 
         while True:
             try:
-                line = raw_input("Enter: ")
+                line = input("Enter: ")
             except EOFError:
                 break
 
