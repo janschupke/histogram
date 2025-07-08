@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "modules.hpp"
+#include <unistd.h>
 
 int main(int argc, char ** argv) {
     const int limit = 10;
@@ -8,7 +9,9 @@ int main(int argc, char ** argv) {
     IO io;
     Histogram histogram(limit);
 
-    io.readFromStdIn(histogram);
+    // Check if input is from a terminal
+    bool showInstructions = isatty(fileno(stdin));
+    io.readFromStdIn(histogram, showInstructions);
     io.printToStdOut(histogram);
 
     return EXIT_SUCCESS;

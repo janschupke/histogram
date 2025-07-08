@@ -33,8 +33,9 @@ class IO {
          * Reads data from standard input and saves them into the histogram instance.
          *
          * @param histogram Provided Histogram instance that is being modified by the input.
+         * @param showInstructions If true, print input instructions. If false, suppress them.
          */
-        void readFromStdIn(Histogram & histogram) const;
+        void readFromStdIn(Histogram & histogram, bool showInstructions = true) const;
 
         /**
          * Prints the current state of the provided histogram to the standard output.

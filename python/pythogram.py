@@ -31,15 +31,16 @@ class Histogram:
 class IO:
     """ Handles all I/O operations. """
 
-    def read_from_stdin(self, histogram):
+    def read_from_stdin(self, histogram, show_instructions=True):
         """ Reads data from user input and puts them into the histogram. """
 
-        print("Enter integer values within <1; {0}>".format(histogram.get_limit()))
-        print("Finish the input by entering 0")
+        if show_instructions:
+            print("Enter integer values within <1; {0}>".format(histogram.get_limit()))
+            print("Finish the input by entering 0")
 
         while True:
             try:
-                line = input("Enter: ")
+                line = input("Enter: " if show_instructions else "")
             except EOFError:
                 break
 
@@ -202,7 +203,8 @@ def main():
     io = IO()
 
     if config.input_filename is None:
-        io.read_from_stdin(histogram)
+        show_instructions = sys.stdin.isatty()
+        io.read_from_stdin(histogram, show_instructions=show_instructions)
     else:
         io.read_from_file(config.input_filename, histogram)
 

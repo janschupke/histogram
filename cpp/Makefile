@@ -16,11 +16,11 @@ all: $(OUT)
 $(ODIR)/%.o: $(SDIR)/%.cpp;
 	@mkdir bin 2>/dev/null;\
 	$(CC) $(CFLAGS) -o $@ $<;\
-	echo -n "."
+	printf "."
 
 $(OUT): $(OBJS);
 	@$(CC) $(OBJS) -o $(OUT);\
-	echo "."
+	printf ".\n"
 
 .PHONY: clean
 clean: ;

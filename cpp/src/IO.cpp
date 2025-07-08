@@ -39,13 +39,15 @@ int IO::calculateScaleUnit(const int max, const int lines) const {
     return scaleUnit;
 }
 
-void IO::readFromStdIn(Histogram & histogram) const {
+void IO::readFromStdIn(Histogram & histogram, bool showInstructions) const {
     string line;
     int value;
 
-    cout << "Enter integer values within <1; " << histogram.getLimit() << ">" << endl;
-    cout << "Finish the input by entering 0" << endl;
-    cout << "Enter: ";
+    if (showInstructions) {
+        cout << "Enter integer values within <1; " << histogram.getLimit() << ">" << endl;
+        cout << "Finish the input by entering 0" << endl;
+        cout << "Enter: ";
+    }
 
     while (getline(cin, line)) {
         try {
@@ -64,7 +66,9 @@ void IO::readFromStdIn(Histogram & histogram) const {
             cerr << e.what() << " Ignoring last input." << endl;
         }
 
-        cout << "Enter: ";
+        if (showInstructions) {
+            cout << "Enter: ";
+        }
     }
 }
 

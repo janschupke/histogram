@@ -24,32 +24,28 @@ histogram/
 ## C++ Implementation
 
 ### Build Instructions
-1. Navigate to the `cpp/` directory:
-   ```sh
-   cd cpp
-   ```
-2. Build the project using `make`:
-   ```sh
-   make
-   ```
-   This will produce the `histogram` binary in the `cpp/` directory.
+To build the project from the project root:
+```sh
+make -C cpp
+```
+This will produce the `histogram` binary in the `cpp/` directory.
 
 ### Run Example
-To run the C++ histogram with an example input:
+To run the C++ histogram with an example input from the project root:
 ```sh
-./histogram < input/mock01.txt
+./cpp/histogram < cpp/input/mock01.txt
 ```
 
 ## Python Implementation
 
 ### Setup
-1. Install dependencies (requires Python 3):
-   ```sh
-   pip install -r python/requirements.txt
-   ```
+To install dependencies (requires Python 3), run from the project root:
+```sh
+pip install -r python/requirements.txt
+```
 
 ### Run Example
-To run the Python histogram with an example input:
+To run the Python histogram with an example input from the project root:
 ```sh
 python3 python/pythogram.py < python/mock01.txt
 ```
