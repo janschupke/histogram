@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall -g -O0
+CFLAGS=-std=c++20 -c -Wall -g -O0
 ODIR = bin
 SDIR = src
 OUT = histogram

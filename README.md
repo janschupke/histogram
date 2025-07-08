@@ -50,6 +50,14 @@ To run the Python histogram with an example input from the project root:
 python3 python/pythogram.py < python/mock01.txt
 ```
 
+To display a graphical plot using matplotlib, add the `-p` flag:
+```sh
+python3 python/pythogram.py -p < python/mock01.txt
+```
+
+- By default, the script prints the histogram to the console.
+- The `-p` flag opens a matplotlib window with a graphical histogram.
+
 ## Notes
 - Both implementations read integer values from standard input and print a histogram to the console.
 - Example input files are provided in each implementation's directory.
